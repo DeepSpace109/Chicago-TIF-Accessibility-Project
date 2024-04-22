@@ -27,7 +27,22 @@ Access to the RDS is provided via a read-only user. The read-only users are pass
 
 
 ## How to query the database
-...Grab that data!
+
+To query the most up to date version of the database, a collection of tools has been created in order to allow civic activists and newcomers to this project to access that data and perform basic queries and analysis. This part of the project is meant to be expanded over time. However, at current release, the following tools are provided:
+
+| Command                               | Documentation                                 |
+| -------------------------------------- | ------------------------------------------- |
+| `establishConnection`        | This file contains a function that reads AWS credentials from `awscreds.csv` and returns a connection object with which to generate the cursor        required to run commands. |
+| `exe`                        | This file contains a function that takes a `cursor` Object and a query written in SQL and returns the result of that query, with no additional processing. |
+| `avggrowth`                  | This file contains a function that takes a table and produces the average growth of y over x, presuming that the x-axis is in years. |
+| `cols`                       | This file contains a function that simply reads off the columns in the database. Useful to get acquainted with writing SQL commands for this database. |
+| `netIncome`                  | This file contains a function that takes a `cursor` Object and a TIF name recognized in the database, and produces a graph of the net change in end of year balance between every year we have on record. This function depends on makeGraph. |
+| `row`                        | This file contains a function that inputs a `cursor` Object, a TIF name, and a year, and returns that specific row of the database. Useful to bypass having to write commands or format strings, as this is the most common method of interfacing with the rows. |
+| `getTable`                   | This file contains a function that takes a `cursor` Object, a column name for the xaxis, a column name for the y axis, a column name to sort by, and then a value for that column, and returns a 2d array containing the elements from the matching rows.
+| `getRegression`              | This file contains a function that inputs a table, and returns a scipi linear regression analysis of the given table. |
+| `makeGraph`                  | This file contains a function that inputs a table, and optionally two names for the axis, and returns a plot. This plot is currently hardcoded to be a bar graph, but this is easily changed.|
+
+
 
 ## How is the CSV File Organized
 Since our data is based off of the philipyayates database, the CSV shares the same format. The format is based on the table [here](https://github.com/philipayates/chicago2022TIF/?tab=readme-ov-file#what-are-these-variables)

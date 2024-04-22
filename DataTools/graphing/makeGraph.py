@@ -5,7 +5,7 @@ from scipy.stats import linregress
 
 def graph(table,xname="",yname="") -> None:
     """
-    Takes a table, and returns a dictionary containing information about a linear regression of that plot.
+    Takes a table, and plots a bar graph
     """
 
     x = []
