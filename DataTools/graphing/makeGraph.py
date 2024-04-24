@@ -1,9 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.stats import linregress
+import matplotlib.ticker as ticker
 
-def graph(table,xname="",yname="") -> None:
+def graph(table,xname="",yname="",title="") -> None:
     """
     Takes a table, and plots a bar graph
     """
@@ -18,6 +18,7 @@ def graph(table,xname="",yname="") -> None:
     plt.bar(x,y, color="blue")
     plt.xlabel(xname)
     plt.ylabel(yname)
+    plt.title(str(title))
 
     plt.show()
 

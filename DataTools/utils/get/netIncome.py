@@ -10,6 +10,6 @@ def netIncomeByYear(cursor, tifname):
     for idx in range(1,len(tab)):
         alteredTab.append([tab[idx][0],(tab[idx][1]-tab[idx-1][1])])
 
-    bg(alteredTab,"Years after first year " + str(tab[0][0]), "Change in end of year balance since start year")
+    bg(alteredTab,"Years after " + str(tab[0][0]), "Change in end of year balance since start year", "Percent Change in Net Balance Year to Year, 35th/Halsted TIF")
 
     return alteredTab

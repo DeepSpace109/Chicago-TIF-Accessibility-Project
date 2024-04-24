@@ -5,10 +5,12 @@ from establishConnection import connect as cn
 from utils.get.cols import cols
 from table.getTable import getTable as tab
 from graphing.makeGraph import graph as g
-from utils.get.netIncome import netIncomeByYear
+from utils.get.netIncome import netIncomeByYear as net
 from utils.support.exe import exe as ex
 from utils.get.row import row
 from utils.get.avggrowth import avggrowth as ag
+
+from utils.get.randomsample import randomSample as rs
 
 #Chicago_TIF capital C
 "SELECT * FROM Chicago_TIF WHERE tif_name = '35th/Halsted';"
@@ -23,22 +25,11 @@ cursor = conn.cursor()
 # data = tab(cursor,'tif_year','cumulative_property_tax_extraction','tif_name',"35th/Halsted")
 
 
-ret = ex(cursor, "SELECT DISTINCT tif_name FROM Chicago_TIF")
+# ret = ex(cursor, "SELECT DISTINCT tif_name FROM Chicago_TIF")
 
-tifNames = [x[0] for x in ret]
-print (tifNames)
+# print(cols(cursor))
 
-# g(data)
-
-datatab = tab(cursor,'tif_year','property_tax_extraction','tif_name',"35th/Halsted")
-print(datatab)
-
-# print(ex(cursor, "SELECT DISTINCT start_year FROM Chicago_TIF WHERE tif_name = '35th/Halsted';"))
-
-# ret = row(cursor,'35th/Halsted',2021)
-
-print(ag(datatab))
-
+rs(cursor)
 
 
 
