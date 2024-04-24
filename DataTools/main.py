@@ -9,7 +9,7 @@ from utils.get.netIncome import netIncomeByYear as net
 from utils.support.exe import exe as ex
 from utils.get.row import row
 from utils.get.avggrowth import avggrowth as ag
-
+from utils.get.investmentQuality import investmentQuality as iq
 from utils.get.randomsample import randomSample as rs
 
 #Chicago_TIF capital C
@@ -29,9 +29,9 @@ cursor = conn.cursor()
 
 # print(cols(cursor))
 
-rs(cursor)
+# rs(cursor)
 
-
+print(iq(cursor, "35th/Halsted",5000000000, 15000000000))
 
 
 
