@@ -1,7 +1,7 @@
 import pymysql
 def cols(cursor) -> list | bool:
     try:
-        cursor.execute("SHOW COLUMNS FROM Chicago_TIF;")
+        cursor.execute("SHOW COLUMNS FROM Chicago_TIF_Data;")
         results = cursor.fetchall()
         cols = []
         for each in results:

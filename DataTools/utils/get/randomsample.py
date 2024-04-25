@@ -6,8 +6,7 @@ import numpy as np
 
 def randomSample(cursor):
     n = 30 #random samples
-
-    yeardat = exe(cursor, "SELECT DISTINCT tif_year FROM Chicago_TIF")
+    yeardat = exe(cursor, "SELECT DISTINCT tif_year FROM Chicago_TIF_Data")
     x = []
     for each in yeardat:
         x.append(each[0])

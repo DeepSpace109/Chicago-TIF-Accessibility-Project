@@ -7,7 +7,7 @@ def getTable(cursor, xaxis,yaxis,sortBy,sortval) -> list | bool :
     """
     takes a cursor object, a variable for the x axis, a variable for the y axis, a constraint variable, and a value for that constraint variable, and returns a table.
     """
-    sql = "SELECT DISTINCT {x},{y} FROM Chicago_TIF WHERE {sortVar} = '{sortVal}'".format(sortVar=sortBy, sortVal=sortval, x=xaxis,y=yaxis)
+    sql = "SELECT DISTINCT {x},{y} FROM Chicago_TIF_Data WHERE {sortVar} = '{sortVal}'".format(sortVar=sortBy, sortVal=sortval, x=xaxis,y=yaxis)
 
     data = exe(cursor, sql)
     

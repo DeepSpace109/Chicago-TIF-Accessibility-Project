@@ -3,18 +3,32 @@ from table.getTable import getTable
 from graphing.makeGraph import graph as bg
 from utils.support.exe import exe
 import numpy as np
+from utils.get.row import row as r
 
+def investmentQuality(cursor,tifname,firstPartition=False):
 
-def investmentQuality(cursor,tifname, boundry1, boundry2):
+    boundry1=13612.06
+    boundry2=359447.2
 
-    tab = getTable(cursor,'expenses','transfers_out','tif_name',tifname)
+    data = []
 
-    temp = []
+    if firstPartition == False:
+        for x in range(2012,2023):
+            try:
+                temp = r(cursor, tifname,x)
+                data.append(temp['expenses'])
+            except:
+                pass
+            
+    else:
+        for x in range(2002,2013):
+            try:
+                temp = r(cursor, tifname,x)
+                data.append(temp['expenses'])
+            except:
+                pass
 
-    for exp,trans in tab:
-        temp.append(exp - trans)
-
-    x = sum(temp)
+    x = sum(data) / len(data)
     
     match x:
         case _ if x < boundry1:

@@ -12,8 +12,8 @@ from utils.get.avggrowth import avggrowth as ag
 from utils.get.investmentQuality import investmentQuality as iq
 from utils.get.randomsample import randomSample as rs
 
-#Chicago_TIF capital C
-"SELECT * FROM Chicago_TIF WHERE tif_name = '35th/Halsted';"
+#Chicago_TIF_Data capital C
+"SELECT * FROM Chicago_TIF_Data WHERE tif_name = '35th/Halsted';"
 
 #startup - create network connection and required cursor
 conn = cn()
@@ -24,14 +24,15 @@ cursor = conn.cursor()
 
 # data = tab(cursor,'tif_year','cumulative_property_tax_extraction','tif_name',"35th/Halsted")
 
+# print(cols(cursor))
 
 # ret = ex(cursor, "SELECT DISTINCT tif_name FROM Chicago_TIF")
 
 # print(cols(cursor))
 
-# rs(cursor)
+print(iq(cursor, "Kostner Avenue",True))
 
-print(iq(cursor, "35th/Halsted",5000000000, 15000000000))
+# print(iq(cursor, "35th/Halsted",5000000000, 15000000000))
 
 
 
