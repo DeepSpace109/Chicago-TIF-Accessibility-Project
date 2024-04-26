@@ -7,7 +7,7 @@ Tax Increment Financing (TIF) districts are districts in Chicago that are create
 - [Chicago TIF Portal](https://www.chicago.gov/city/en/depts/dcd/provdrs/tif.html)
 
 ## Previous Work in This Area
-We based our work on trying to expand the [Chicago 2022 TIF Data Project](https://github.com/philipayates/chicago2022TIF) created through a collaboration between the MCDC Project and The CivicLab
+We based our work around the idea of expanding the [Chicago 2022 TIF Data Project](https://github.com/philipayates/chicago2022TIF) created through a collaboration between the MCDC Project and The CivicLab
 
 ## Chicago TIF Accessibility Project
 Our project focused on turning TIF financial data into an easily accessible digital format. There are two ways to access this data.
@@ -49,13 +49,12 @@ Since our data is based off of the philipyayates database, the CSV shares the sa
 
 | Variable                               | Explanation                                 |
 | -------------------------------------- | ------------------------------------------- |
-| **Current Data Year**                  | The year that the current data is from. |
-| **TIF District Name**                  | The name of this TIF District. |
-| **TIF District Number**                | The number of this TIF District. |
+| **TIF Name**                           | The name of this TIF District. |
+| **TIF Year**                           | The year that the current data is from. |
+| **TIF Number**                         | The number of this TIF District. |
 | **Property Tax Extraction**            | The amount of property tax collected this year (within the TIF District). |
+| **Expenses**                           | The Total Expenditures. The amount of money spent on projects applicable to the TIF. |
 | **Transfers In**                       | The amount transferred into this TIF District from neighboring TIF Districts this year. |
 | **Transfers Out**                      | Amount of funds transferred out of the account and ported to a neighboring TIF District. |
-| **Expenses**                           | The Total Expenditures. The amount of money spent on projects applicable to the TIF. |
+| **Distribution**                       | Disbursement of surplus funds. This is often directed to the Treasurer for reallocation elsewhere. |
 | **Fund Balance End**                   | Balance of this TIF District's Fund at the end of the Current Data Year. |
-| **Surplus Distribution**               | Disbursement of surplus funds. This is often directed to the Treasurer for reallocation elsewhere. |
-| **Possible Errors**                    | Because of how the data is collected, some data failed to be validated. This is a list of possible errors or warning related to this specific year/tif if there are any errors. |
